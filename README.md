@@ -1,9 +1,9 @@
 ### Here we describe how to generate gtf files for uORFs
 
-Remember there could be multiple uORFs for one 5'UTR so there will be multiple gtf files generate in that situation:
+Remember there could be multiple uORFs for one 5'UTR, and there will be multiple gtf files generate in that situation.
 
 Note:
-1. Here we only consider uORFs start with AUG but you can modify the start sequences in the findUORFs function
+1. Here we only consider uORFs start with AUG but you can modify the start sequences in the findUORFs (see ORFik package) function
 2. Requirements: (1) a fasta file for genome sequence (2) a gtf files with CDS information
 3. The following code works in Mac OS and Linux, but might require slight modification for Windows system
 
