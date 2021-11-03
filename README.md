@@ -7,6 +7,7 @@ Remember there could be multiple uORFs for one 5'UTR so there will be multiple g
 # rm(list=ls())
 library(GenomicRanges)
 library(GenomicFeatures)
+library(Rsamtools)
 library(ORFik)
 library(rtracklayer)
 
