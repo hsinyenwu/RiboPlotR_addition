@@ -6,6 +6,7 @@ Note:
 1. Here we only consider uORFs start with AUG but you can modify the start sequences in the findUORFs (see ORFik package) function
 2. Requirements: (1) a fasta file for genome sequence (2) a gtf files with CDS information
 3. The following code works in Mac OS and Linux, but might require slight modification for Windows system
+4. The following files TAIR10_chr_1.fa and Araport11+CTRL_20181206.gtf are attached.
 
 ```
 # Make uORF GTFs for one transcript
@@ -48,7 +49,7 @@ generate_uORFgtfs <-function(x,y,z){
   }
 }
 
-generate_uORFgtfs("AT1G01060","AT1G01060.1","~/Desktop/test/")
+generate_uORFgtfs("AT1G01060","AT1G01060.1","~/Desktop/test/") #Should generate five uORF gtf files
 ```
 
 Citation: Please cite our paper: https://www.biorxiv.org/content/10.1101/694646v1 if you use information provided here for your research. Thanks!
