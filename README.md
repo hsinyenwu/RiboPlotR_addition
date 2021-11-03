@@ -1,6 +1,11 @@
 ### Here we describe how to generate gtf files for uORFs
 
-Remember there could be multiple uORFs for one 5'UTR so there will be multiple gtf files generate:
+Remember there could be multiple uORFs for one 5'UTR so there will be multiple gtf files generate in that situation:
+
+Note:
+1. Here we only consider uORFs start with AUG but you can modify the start sequences in the findUORFs function
+2. Requirements (1) a fasta file for genome sequence (2) a gtf files with CDS information (3)
+3. 
 
 ```
 # Make uORF GTFs for one transcript
@@ -12,9 +17,9 @@ library(ORFik)
 library(rtracklayer)
 
 # Load the genome sequence file (e.g. TAIR10 genome sequence):
-FA <- FaFile("~/Desktop/Leaky_scanning/TAIR10_chr_all_2.fas")
+FA <- FaFile("~/Desktop/TAIR10_chr_1.fa")
 # Make the TxDb file (Use a gtf from Araport11)
-txdb <- makeTxDbFromGFF("~/Desktop/CTRL_v1/Araport11+CTRL_20181206.gtf",format="gtf", dataSource="Araport11",organism="Arabidopsis")
+txdb <- makeTxDbFromGFF("~/Desktop/Araport11+CTRL_20181206.gtf",format="gtf", dataSource="Araport11",organism="Arabidopsis")
 # Extract 5'UTR ranges
 fiveUTR <- fiveUTRsByTranscript(txdb, use.names=T)
 # Extract CDS ranges
@@ -22,7 +27,11 @@ CDS <- cdsBy(txdb,by="tx", use.names=T)
 # Extract exon ranges
 exonRanges <- exonsBy(txdb,by="tx", use.names=T)
 
-# generate_uORFgtf, parameter x is the transcript name
+# generate_uORFgtfs function
+# x is the gene name
+# y is the transcript name
+# z is the path for the new gtf files
+
 generate_uORFgtfs <-function(x,y,z){
   uORF <<- findUORFs(fiveUTRs=fiveUTR[y],fa=FA,longestORF=T,cds=CDS[y],restrictUpstreamToTx=T)
   export.gff(exonRanges[y],con=paste0(z,"uORF_exon_ranges.gtf"),format="gff2")
