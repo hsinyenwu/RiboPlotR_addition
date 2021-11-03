@@ -4,8 +4,8 @@ Remember there could be multiple uORFs for one 5'UTR so there will be multiple g
 
 Note:
 1. Here we only consider uORFs start with AUG but you can modify the start sequences in the findUORFs function
-2. Requirements (1) a fasta file for genome sequence (2) a gtf files with CDS information (3)
-3. 
+2. Requirements: (1) a fasta file for genome sequence (2) a gtf files with CDS information
+3. The following code works in Mac OS and Linux, but might require slight modification for Windows system
 
 ```
 # Make uORF GTFs for one transcript
@@ -51,4 +51,4 @@ generate_uORFgtfs <-function(x,y,z){
 generate_uORFgtfs("AT1G01060","AT1G01060.1","~/Desktop/test/")
 ```
 
-Citation: Please cite our paper: https://www.biorxiv.org/content/10.1101/694646v1 if you use information provided here for your research. 
+Citation: Please cite our paper: https://www.biorxiv.org/content/10.1101/694646v1 if you use information provided here for your research. Thanks!
