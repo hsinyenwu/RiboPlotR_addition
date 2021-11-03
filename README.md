@@ -2,7 +2,7 @@
 
 Remember there could be multiple uORFs for one 5'UTR so there will be multiple gtf files generate:
 
-'''
+```
 # Make uORF GTFs for one transcript
 # rm(list=ls())
 library(GenomicRanges)
@@ -39,6 +39,6 @@ generate_uORFgtfs <-function(x,y,z){
 }
 
 generate_uORFgtfs("AT1G01060","AT1G01060.1","~/Desktop/test/")
-'''
+```
 
 Citation: Please cite our paper: https://www.biorxiv.org/content/10.1101/694646v1 if you use information provided here for your research. 
