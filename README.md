@@ -1,4 +1,4 @@
-## Here we describe how to generate gtf files for uORFs
+## Here we describe two ways to generate gtf files for uORFs
 
 Remember there could be multiple uORFs for one 5'UTR, and there will be multiple gtf files generate in that situation.
 
@@ -66,7 +66,7 @@ generate_uORFgtfs(x="AT1G01060",y="AT1G01060.1",z="~/Desktop/test/") #Should gen
 ```
 
 
-### 2. Generate 5' UTR gtf files for RiboTaper defined uORFs
+### 2. Generate the gtf files for RiboTaper defined uORFs
 
 ```R
 # rm(list=ls())
