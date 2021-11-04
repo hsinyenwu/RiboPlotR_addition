@@ -1,15 +1,17 @@
-### Here we describe how to generate gtf files for uORFs
+## Here we describe how to generate gtf files for uORFs
 
 Remember there could be multiple uORFs for one 5'UTR, and there will be multiple gtf files generate in that situation.
 
+### Generate gtf files for uORFs using genomic sequences and annotation for 5'UTRs and transcripts   
+
 Note:
-1. Here we only consider uORFs start with AUG but you can modify the start sequences in the findUORFs (see ORFik package) function
+1. Here we only consider uORFs start with AUG but you can modify the start sequences in the findUORFs (see ORFik package for detail) function
 2. Requirements: (1) a fasta file for genome sequence (2) a gtf files with CDS information
 3. The following code works in Mac OS and Linux, but might require slight modification for Windows system
 4. The compressed files for: TAIR10_chr_1.fa and Araport11+CTRL_20181206.gtf are attached so you can try this function out.
 
 ```
-# Make uORF GTFs for one transcript
+# Make uORF GTFs using genomic sequences and annotation for 5'UTRs and transcripts for one transcript
 # rm(list=ls())
 library(GenomicRanges)
 library(GenomicFeatures)
@@ -58,8 +60,10 @@ generate_uORFgtfs <-function(x,y,z){
 }
 
 #Example:
-generate_uORFgtfs("AT1G01060","AT1G01060.1","~/Desktop/test/") #Should generate five uORF gtf files.
+generate_uORFgtfs(x="AT1G01060",y="AT1G01060.1",z="~/Desktop/test/") #Should generate five uORF gtf files.
 
 ```
+
+
 
 Citation: Please cite our paper: https://www.biorxiv.org/content/10.1101/694646v1 if you use information provided here for your research. Thanks!
