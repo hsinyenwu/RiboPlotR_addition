@@ -79,7 +79,7 @@ library(ORFik)
 library(rtracklayer)
 
 # Load genome sequences
-FA <- FaFile("~/Desktop/Leaky_scanning/TAIR10_chr_all_2.fas")
+FA <- FaFile("~/Desktop/Leaky_scanning/TAIR10_chr_1.fas")
 # Generate txdb object
 txdb <- makeTxDbFromGFF("~/Desktop/CTRL_v1/Araport11+CTRL_20181206.gtf",format="gtf", dataSource="Araport11",organism="Arabidopsis")
 # Load GTF file
@@ -90,7 +90,7 @@ fiveUTR <- fiveUTRsByTranscript(txdb, use.names=T)
 CDS <- cdsBy(txdb,by="tx", use.names=T)
 
 #load RiboTaper output ORFs_max_filt file
-Exp <- read.delim(file="~/Desktop/uORF_gtfs/ORFs_max_filt_example.tsv",header=T,stringsAsFactors=F,sep="\t")
+Exp <- read.delim(file="~/Desktop/uORF_gtfs/ORFs_max_filt_example.tsv",header=T,stringsAsFactors=F,sep="\t") #file included 
 Exp_uORFs <- Exp %>% filter(category=="uORF") %>% mutate(ORF_pept_length=nchar(ORF_pept))
 nrow(Exp_uORFs)
 
