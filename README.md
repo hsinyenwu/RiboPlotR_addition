@@ -118,4 +118,4 @@ for(i in 1:nrow(Exp_uORFs)){
 }
 ```
 
-Citation: Please cite our paper: https://www.biorxiv.org/content/10.1101/694646v1 if you use information provided here for your research. Thanks!
+Citation: Please cite our paper: https://plantmethods.biomedcentral.com/articles/10.1186/s13007-021-00824-4 if you use information provided here for your research. Thanks!
