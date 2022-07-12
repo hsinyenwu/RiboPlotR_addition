@@ -100,7 +100,7 @@ for(i in 1:nrow(Exp_uORFs)){
   if(i%%100==0) print(i) 
   # a is the 5'UTR range for the ith uORF
   a=fiveUTR[Exp_uORFs$transcript_id[i]]
-  # b is the CDS range for the ith uORF
+  # b is the CDS range for the ith main/annotated ORF
   b=CDS[Exp_uORFs$transcript_id[i]]
   # d is the output ranges for the findUORFs function
   d=findUORFs(fiveUTRs=a,fa=FA, startCodon="ATG",longestORF=F,cds=b,restrictUpstreamToTx=T)
