@@ -2,7 +2,9 @@
 
 Remember there could be multiple uORFs for one 5'UTR, and there will be multiple gtf files generate in that situation.
 
-The uORF gtf files generated here could be used as the input gtf file for the `uorf.structure` function. 
+The uORF gtf files generated here could be used as the input gtf file for the `uorf.structure` function (RiboPlotR).
+
+**Please change the path/directory if you want to try out the code below.**
 
 ### 1. Generate gtf files for uORFs using genomic sequences and annotation for 5'UTRs and transcripts   
 
