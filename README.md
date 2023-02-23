@@ -46,13 +46,13 @@ generate_uORFgtfs <-function(x,y,z){
   #Export the exon info for the uORF containing transcript to a temp gtf file
   export.gff(exonRanges[y],con=paste0(z, "uORF_exon_ranges.gtf"), format="gff2")
   #Read in the exon info. Now it is in the gtf format
-  EXONu <- read.delim(paste0(z,"uORF_exon_ranges.gtf"), skip=4, header=F)
+  EXONu <- read.delim(paste0(z,"uORF_exon_ranges.gtf"), skip=3, header=F)
   #Modify the column 3 and 9
-  EXONu$V3 <- "mRNA"
+  # EXONu$V3 <- "mRNA"
   EXONu$V9 <- paste0("gene_id ","\"",x,"\"; ", "transcript_id ","\"",y,"\";")
   
   for (i in seq_along(uORF)) {
-  #Export the uORF CDS range for uORF i (i is the number of a specific uORF)
+    #Export the uORF CDS range for uORF i (i is the number of a specific uORF)
     export.gff(uORF[i], con=paste0(z,"uORF_CDS_ranges.gtf"), format="gff2")
     #Read in the CDS range
     CDSu <- read.delim(paste0(z,"uORF_CDS_ranges.gtf"), skip=4, header=F)
